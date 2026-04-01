@@ -169,12 +169,13 @@ function renderMilestones(){
 document.getElementById("wigglyBoi").addEventListener("click", function(){
     if(clickDebounce == true){
         return;
+    }else{
+        clickDebounce = true;
+        player.Currencies.Hooman += getHoomanGain();
+        player.Currencies.TotalHooman += getHoomanGain();
+        updateText();
+        setTimeout(resetDebounce, 100);
     }
-    clickDebounce = true;
-    player.Currencies.Hooman += getHoomanGain();
-    player.Currencies.TotalHooman += getHoomanGain();
-    updateText();
-    setTimeout(resetDebounce, 100);
 })
 
 function resetDebounce(){
