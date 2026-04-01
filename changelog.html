@@ -1,0 +1,148 @@
+
+<!DOCTYPE HTML>
+<html>
+    <link rel="stylesheet" href="css/changelog.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link rel="icon" href="Images/favicon.ico">
+    <body>
+        <h1>CHANGELOG</h1>
+    </body>
+    <div id="navBar">
+        <button class="navButton" id="testButton" onclick="changeChangelog('0.2')">0.2 Changes</button>
+        <button class="navButton" id="testButton" onclick="changeChangelog('0.1.5')">0.1.5 Changes</button>
+        <button class="navButton" id="testButton" onclick="changeChangelog('0.1')">0.1 Changes</button>
+    </div>
+    <span id="changelogText">
+    </span>
+   
+
+
+    
+    <div id="Image" id="weirdImage"><img src="Images/Goofy Images/houseGuy.png" id="theImage"/><p id="theImage">Here's a free weird image!</p></div>
+    <div id="rainbow"><p id="rainbowText">Oooooh a swirly rainbow!!</p></div>
+
+</html>
+<script>
+    let currType = "Base";
+    const logs = {
+        "Base" : `<h2>Changelog:</h2>
+        <p>Wow, click around the tabs to explore what happened before</p>`,
+        "0.1" : `<h2>v0.1.5: Fixing Things: 2/2/24</h2>`,
+        "0.1.5" : `<h2>v0.1.5: Fixing Things: 2/2/24</h2>`,
+        "0.2" : ` <h2>v0.2: Fooling around: 3/1 ???</h2>`,
+    }
+    
+    const changes = {
+        ["0.2"]: [
+            "buh!",
+            "faisdofpzp",
+            "tabs",
+            "what's an upgrade?",
+            "upgradering",
+            "buttah",
+            "FT????",
+            "wiggl",
+            "not much more",
+            "lirpa sloof",
+            "im a farmer",
+            "yes we can",
+            "indeed",
+            "yes",
+            "something else... come back in a few days"
+        ],
+        ["0.1.5"]: [
+            "Limited how fast you can click Hoomans. (hopefully)",
+            "Heavily nerfed bonuses and increased building requirements",
+            "Changed a few designs of certain elements.",
+            "Added a few username easter eggs. <br>If some names are used, something could be triggered....",
+        ],
+
+        ["0.1"]: [
+            "Added the Buildings:</li><br><ul><b>Hoomans<br> Houses <br>Towns<br> Cities<br> States<br> Countries<br> Continents<br>Planets</ul></b>",
+            "Made a bonuses section on the left side.",
+            "Made a place to put a player name.",
+            "Created this goofy changelog.",
+            "Extremely rebalanced the game.",
+            "Added a save system.",
+            "Added time played counter",
+            "Created gradients for the background of buildings.",
+            "Added save and reset buttons.",
+            "Added an endgame.",
+            "Added a few easter eggs.",
+        ],
+    }
+
+    function generateFullLog(version){
+        let preExistingInfo = logs[version];
+        for(i=0;i<changes[version].length;i++){
+            preExistingInfo += `<br><li>${changes[version][i]}</li>`
+        }
+        preExistingInfo += `<br>`;
+        preExistingInfo += `<br>`;
+        preExistingInfo += `<br>`;
+        return preExistingInfo;
+    }
+
+    function changeChangelog(type){
+        if(currType != type){
+            document.getElementById("changelogText").innerHTML = generateFullLog(type);
+            currType = type;
+            return;
+        }else{
+            currType = "Base";
+            document.getElementById("changelogText").innerHTML = logs["Base"];
+        }
+    }
+    window.onload = function(){
+        changeChangelog("Base");
+    }
+</script>
+
+<style>
+    body{
+    font-family:'Varela Round';
+    position:absolute;
+    user-select: none;
+    left:5%;
+    background-color: gray;;
+}
+
+#weirdImage{
+    position:absolute;
+    left:700px;
+    top:50px;
+}
+#theImage{
+    position:fixed;
+    right:0%;
+    top:0%;
+    width:500px;
+    height:300px;
+    text-align:center;
+}
+#rainbow{
+    position:fixed;
+    right:0%;
+    top:300px;
+    bottom:25px;
+    width:500px;
+    height:300px;
+    text-align:center;
+    background-image:radial-gradient(circle, red, orange, yellow, green, blue, purple, blue, green, yellow, orange, red);
+}
+#rainbowText{
+    color:white;
+}
+
+.navButton{
+    border:5px solid black;
+    border-bottom: 0px;
+    width:150px;
+    height:50px;
+    background-color: rgb(110, 108, 108);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight:bold;
+    font-family: 'Varela Round';
+}
+</style>
