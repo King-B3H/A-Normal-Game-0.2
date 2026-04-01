@@ -167,7 +167,9 @@ function renderMilestones(){
 }
 
 document.getElementById("wigglyBoi").addEventListener("click", function(){
-    if(clickDebounce) return;
+    if(clickDebounce == true){
+        return;
+    }
     clickDebounce = true;
     player.Currencies.Hooman += getHoomanGain();
     player.Currencies.TotalHooman += getHoomanGain();
