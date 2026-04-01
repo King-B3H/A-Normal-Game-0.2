@@ -259,7 +259,7 @@ window.addEventListener("keydown", function(key){//Controls when keys are presse
     if(key.key == "s"){
         saveGame();
     }
-    if(key.key == "r"){
+    if(key.key == "escape"){
         resetGame();
     }
 
