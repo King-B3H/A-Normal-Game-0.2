@@ -259,9 +259,6 @@ window.addEventListener("keydown", function(key){//Controls when keys are presse
     if(key.key == "s"){
         saveGame();
     }
-    if(key.key == "escape"){
-        resetGame();
-    }
 
     //Saves the current tab the user is on for arrow navigation
     let currentTab = "";
