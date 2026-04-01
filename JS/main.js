@@ -174,7 +174,7 @@ document.getElementById("wigglyBoi").addEventListener("click", function(){
         player.Currencies.Hooman += getHoomanGain();
         player.Currencies.TotalHooman += getHoomanGain();
         updateText();
-        setTimeout(resetDebounce, 100);
+        setTimeout(resetDebounce, 125);
     }
 })
 
