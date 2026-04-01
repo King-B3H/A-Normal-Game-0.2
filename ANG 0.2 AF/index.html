@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Normal Game 0.2</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="icon" href="Images/favicon.ico">
+    </head>
+    <body>
+        <div id="navBar">
+            <div id="navBarText"></div>
+        </div>
+        <div id="gameNotificationDisplay" class="textCentered"></div>   
+        <div id="homeTab" class="gameTab">
+                <h1>click him for hooman ig. <br><p>lowkey dk how hooman appear but it just does</p></h1>
+            <div id="leftMain">
+                <div style="position:relative;top:50%;translate:0% -50%;">
+                    <img src="Images/Wiggle.gif" id="wigglyBoi"/>
+                    <br>
+                    <span id="playerDisplay">0 Hooman</span>
+                    <br>
+                    <span id="potatoDisplay"></span>
+                </div>
+            </div>
+            <div id="rightMain">
+                <div id="buildingContainer">
+                </div>
+            </div>
+        </div>
+
+        <div id="upgradesTab" class="gameTab">
+            <table id="upgradesTable" style="width:50%;height:100%;position:absolute;top:50%;left:50%;translate:-50% -50%;">
+                <tr id="upgradeRow0" class="upgradeTableRow">
+                </tr>
+            </table>
+            <div id="shop">
+                <h1>da shop</h1>
+                <h3>buy stuff ig</h3>
+            </div>
+        </div>
+        
+        <div id="butterTab" class="gameTab">
+            <h1>Butter Farm</h1>
+            <h1><span id="butterDisplay"></span></h1>
+            <span id="butterGain"></span>
+            <p>Butter gain is based on the amount of unique buildings owned and OOM hoomans passed 100k.</p>
+            <b><i>(Need above 100k to generate)</i></b>
+            <div id="milestoneDisplay" style="display:flex;position: absolute;top:60%;left:50%;translate:-50% -50%;justify-content: center;align-content: center;justify-items: center;align-items: center;">
+            </div>
+        </div>
+        
+        <div id="endgameTab" class="gameTab" style="text-align: center;">
+            <h1>Nothing to see here</h1>
+        </div>
+
+        <div id="settingsTab" class="gameTab">
+            <button onclick="openSettings('keybinds')" class="settingsButton">Change Keybinds</button>
+            <button onclick="window.open('changelog.html')" target="_blank" class="settingsButton" style="background-color: orange;">Changelog</button>
+            <button onclick="saveGame()" class="settingsButton">Save Game</button>
+            <button onclick="resetGame()" class="settingsButton" style="background-color:red;">Reset Game</button>
+            <div id="keybindsSettingUI">
+                <button onclick="closeSettings('keybinds')" id="closeSettingButton">
+                    X
+                </button>
+            </div>
+            <p>You have played for:</p>
+            <br>
+            <span id="dayDisplay"></span>
+            <span id="hourDisplay"></span>
+            <span id="minuteDisplay"></span>
+            <span id="secondDisplay"></span>
+        </div>
+    </body>
+</html>
+<script src="JS/format.js"></script>
+<script src="JS/settings.js"></script>
+<script src="JS/upgradeData.js"></script>
+<script src="JS/upgrades.js"></script>
+<script src="JS/main.js"></script>
