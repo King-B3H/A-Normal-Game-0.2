@@ -27,6 +27,7 @@ var gameTabs = { //List for the tabs in the game
 }
 
 let changingKeybinds = false;
+let clickDebounce = false;
 
 var butterMilestones = {
     ["1"]:{
@@ -166,11 +167,17 @@ function renderMilestones(){
 }
 
 document.getElementById("wigglyBoi").addEventListener("click", function(){
+    if(clickDebounce) return;
+    clickDebounce = true;
     player.Currencies.Hooman += getHoomanGain();
     player.Currencies.TotalHooman += getHoomanGain();
     updateText();
+    setTimeout(resetDebounce, 100);
 })
 
+function resetDebounce(){
+    clickDebounce = false;
+}
 
 function updateText(){
     document.getElementById("playerDisplay").innerHTML = format(player.Currencies.Hooman) + " Hooman";
